@@ -1,0 +1,26 @@
+- name: WebServ in range
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Update cache
+    apt:
+      update_cache: yes
+
+  - name: Upgrade
+    apt:
+      upgrade: yes
+
+  - name: Install unzip
+    apt:
+      pkg:
+        - unzip
+        - i3
+        - feh
+        - xinit
+        - xterm
+        - x11-xserver-utils
+        - openjdk-17-jdk
+      state: present
+
